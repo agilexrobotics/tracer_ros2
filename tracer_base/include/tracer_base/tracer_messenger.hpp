@@ -1,14 +1,14 @@
 /*
  * tracer_messenger.hpp
  *
- * Created on: Jun 14, 2019 10:24
+ * Created on: Jun 14, 2022 16:37
  * Description:
  *
- * Copyright (c) 2019 Ruixiang Du (rdu)
+ * Copyright (c) 2022 tx (tx)
  */
 
-#ifndef SCOUT_MESSENGER_HPP
-#define SCOUT_MESSENGER_HPP
+#ifndef TRACER_MESSENGER_HPP
+#define TRACER_MESSENGER_HPP
 
 #include <string>
 #include <mutex>

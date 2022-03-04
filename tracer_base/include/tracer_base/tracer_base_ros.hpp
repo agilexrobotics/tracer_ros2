@@ -1,14 +1,14 @@
 /*
  * tracer_base_ros.hpp
  *
- * Created on: Oct 15, 2021 14:31
+ * Created on: 3 2, 2022 16:38
  * Description:
  *
- * Copyright (c) 2021 Weston Robot Pte. Ltd.
+ * Copyright (c) 2022 Agilex Robot Pte. Ltd.
  */
 
-#ifndef SCOUT_BASE_ROS_HPP
-#define SCOUT_BASE_ROS_HPP
+#ifndef TRACER_BASE_ROS_HPP
+#define TRACER_BASE_ROS_HPP
 
 #include <atomic>
 #include <memory>

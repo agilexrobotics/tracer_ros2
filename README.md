@@ -10,7 +10,7 @@ This repository contains minimal packages to control the tracer robot using ROS.
 ## Supported Hardware
 
 * Tracer
- 
+* Tracer-mini
 
 ## Basic usage of the ROS packages
 
@@ -56,6 +56,10 @@ This repository contains minimal packages to control the tracer robot using ROS.
 
     ```
     $ ros2 launch tracer_base tracer_base.launch.py
+    ```
+    or
+     ```
+    $ ros2 launch tracer_base tracer_mini_base.launch.py
     ```
 
 * Then you can send command to the robot

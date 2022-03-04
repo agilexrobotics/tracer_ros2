@@ -22,7 +22,7 @@ This repository contains minimal packages to control the tracer robot using ROS.
     $ mkdir -p ~/ros2_ws/src
     $ cd ~/ros2_ws/src
     $ git clone https://github.com/westonrobot/ugv_sdk.git
-    $ git clone https://github.com/westonrobot/tracer_ros2.git
+    $ git clone https://github.com/agilexrobotics/tracer_ros2.git
     $ cd ..
     $ colcon build
     ```

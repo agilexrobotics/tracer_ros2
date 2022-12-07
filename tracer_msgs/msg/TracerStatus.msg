@@ -13,7 +13,7 @@ float64 linear_velocity
 float64 angular_velocity
 
 # base state
-uint8 vehicle_state
+#uint8 vehicle_state
 uint8 control_mode
 uint16 error_code
 float64 battery_voltage
@@ -22,8 +22,8 @@ float64 battery_voltage
 TracerActuatorState[2] actuator_states
 
 bool light_control_enabled
-TracerLightState front_light_state
+#TracerLightState front_light_state
 
 #odometer state
-float64 left_odomter
-float64 right_odomter
+#float64 left_odomter
+#float64 right_odomter

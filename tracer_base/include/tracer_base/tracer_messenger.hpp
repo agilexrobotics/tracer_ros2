@@ -83,7 +83,7 @@ class TracerMessenger {
     status_msg.linear_velocity = state.motion_state.linear_velocity;
     status_msg.angular_velocity = state.motion_state.angular_velocity;
 
-    status_msg.vehicle_state = state.system_state.vehicle_state;
+    //status_msg.vehicle_state = state.system_state.vehicle_state;
     status_msg.control_mode = state.system_state.control_mode;
     status_msg.error_code = state.system_state.error_code;
     status_msg.battery_voltage = state.system_state.battery_voltage;
@@ -98,26 +98,26 @@ class TracerMessenger {
           actuator.actuator_hs_state[i].rpm;
       status_msg.actuator_states[motor_id].current =
           actuator.actuator_hs_state[i].current;
-      status_msg.actuator_states[motor_id].pulse_count =
-          actuator.actuator_hs_state[i].pulse_count;
+      //status_msg.actuator_states[motor_id].pulse_count =
+          //actuator.actuator_hs_state[i].pulse_count;
 
       // actuator_ls_state
-      motor_id = actuator.actuator_ls_state[i].motor_id;
+      //motor_id = actuator.actuator_ls_state[i].motor_id;
 
-      status_msg.actuator_states[motor_id].driver_voltage =
-          actuator.actuator_ls_state[i].driver_voltage;
-      status_msg.actuator_states[motor_id].driver_temperature =
-          actuator.actuator_ls_state[i].driver_temp;
-      status_msg.actuator_states[motor_id].motor_temperature =
-          actuator.actuator_ls_state[i].motor_temp;
-      status_msg.actuator_states[motor_id].driver_state =
-          actuator.actuator_ls_state[i].driver_state;
+      //status_msg.actuator_states[motor_id].driver_voltage =
+          //actuator.actuator_ls_state[i].driver_voltage;
+      //status_msg.actuator_states[motor_id].driver_temperature =
+          //actuator.actuator_ls_state[i].driver_temp;
+      //status_msg.actuator_states[motor_id].motor_temperature =
+          //actuator.actuator_ls_state[i].motor_temp;
+      //status_msg.actuator_states[motor_id].driver_state =
+          //actuator.actuator_ls_state[i].driver_state;
     }
 
-    status_msg.light_control_enabled = state.light_state.enable_cmd_ctrl;
-    status_msg.front_light_state.mode = state.light_state.front_light.mode;
-    status_msg.front_light_state.custom_value =
-        state.light_state.front_light.custom_value;
+    //status_msg.light_control_enabled = state.light_state.enable_cmd_ctrl;
+    //status_msg.front_light_state.mode = state.light_state.front_light.mode;
+    //status_msg.front_light_state.custom_value =
+        //state.light_state.front_light.custom_value;
     // status_msg.rear_light_state.mode = state.light_state.rear_light.mode;
     // status_msg.rear_light_state.custom_value =
     //     state.light_state.rear_light.custom_value;

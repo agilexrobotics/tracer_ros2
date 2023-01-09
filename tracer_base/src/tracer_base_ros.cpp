@@ -62,7 +62,7 @@ bool TracerBaseRos::Initialize() {
     std::cout << "Robot base: Tracer" << std::endl;
   }
 
-  ProtocolDectctor detector;
+  ProtocolDetector detector;
   if (detector.Connect(port_name_)) {
     auto proto = detector.DetectProtocolVersion(5);
   if (proto == ProtocolVersion::AGX_V2) {

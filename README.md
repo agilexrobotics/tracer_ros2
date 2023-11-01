@@ -4,7 +4,7 @@
 
 This repository contains minimal packages to control the tracer robot using ROS. 
 
-* tracer_base: a ROS wrapper around [ugv_sdk](https://github.com/westonrobot/ugv_sdk) to monitor and control the tracer robot
+* tracer_base: a ROS wrapper around [ugv_sdk](https://github.com/agilexrobotics/ugv_sdk) to monitor and control the tracer robot
 * tracer_msgs: tracer related message definitions
 
 ## Supported Hardware
@@ -21,7 +21,7 @@ This repository contains minimal packages to control the tracer robot using ROS.
     ```
     $ mkdir -p ~/ros2_ws/src
     $ cd ~/ros2_ws/src
-    $ git clone https://github.com/westonrobot/ugv_sdk.git
+    $ git clone https://github.com/agilexrobotics/ugv_sdk.git
     $ git clone https://github.com/agilexrobotics/tracer_ros2.git
     $ cd ..
     $ colcon build

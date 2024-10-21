@@ -22,7 +22,7 @@ This repository contains minimal packages to control the tracer robot using ROS.
     $ mkdir -p ~/ros2_ws/src
     $ cd ~/ros2_ws/src
     $ git clone https://github.com/agilexrobotics/ugv_sdk.git
-    $ git clone https://github.com/agilexrobotics/tracer_ros2.git
+    $ git clone -b jazzy https://github.com/agilexrobotics/tracer_ros2.git
     $ cd ..
     $ colcon build
     ```
@@ -51,7 +51,7 @@ This repository contains minimal packages to control the tracer robot using ROS.
     $ candump can0
     ```
 3. Launch ROS nodes
- 
+
 * Start the base node for the Tracer robot
 
     ```
@@ -60,20 +60,20 @@ This repository contains minimal packages to control the tracer robot using ROS.
     or
      ```
     $ ros2 launch tracer_base tracer_mini_base.launch.py
-    ```
+     ```
 
 * Then you can send command to the robot
     ```
     $ ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "linear:
-    x: 0.0
+    x: 0.1
     y: 0.0
     z: 0.0
     angular:
     x: 0.0
     y: 0.0
-    z: 0.0" 
-
+    z: 0.1" 
+    
     ```
-**SAFETY PRECAUSION**: 
+    **SAFETY PRECAUSION**: 
 
 Always have your remote controller ready to take over the control whenever necessary. 

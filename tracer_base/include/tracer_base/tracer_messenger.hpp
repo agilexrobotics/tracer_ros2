@@ -86,7 +86,7 @@ class TracerMessenger {
     status_msg.vehicle_state = state.system_state.vehicle_state;
     status_msg.control_mode = state.system_state.control_mode;
     status_msg.error_code = state.system_state.error_code;
-    status_msg.battery_voltage = state.system_state.battery_voltage;
+    status_msg.battery_voltage = state.system_state.battery_voltage*0.1;
 
     auto actuator = tracer_->GetActuatorState();
 

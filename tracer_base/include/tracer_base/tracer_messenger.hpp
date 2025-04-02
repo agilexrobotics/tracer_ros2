@@ -22,6 +22,7 @@
 
 #include "tracer_msgs/msg/tracer_status.hpp"
 #include "tracer_msgs/msg/tracer_light_cmd.hpp"
+#include "tracer_msgs/msg/tracer_rc_state.hpp"
 
 #include "ugv_sdk/mobile_robot/tracer_robot.hpp"
 #include "ugv_sdk/utilities/protocol_detector.hpp"
@@ -48,7 +49,9 @@ class TracerMessenger {
         node_->create_publisher<nav_msgs::msg::Odometry>(odom_topic_name_, 50);
     status_pub_ = node_->create_publisher<tracer_msgs::msg::TracerStatus>(
         "/tracer_status", 10);
-
+    rc_status_pub_ = node_->create_publisher<tracer_msgs::msg::TracerRCState>(
+        "/tracer_rc_status",10);
+        
     // cmd subscriber
     motion_cmd_sub_ = node_->create_subscription<geometry_msgs::msg::Twist>(
         "/cmd_vel", 5,
@@ -77,7 +80,7 @@ class TracerMessenger {
 
     // publish tracer state message
     tracer_msgs::msg::TracerStatus status_msg;
-
+    tracer_msgs::msg::TracerRCState rc_state_msg;
     status_msg.header.stamp = current_time_;
 
     status_msg.linear_velocity = state.motion_state.linear_velocity;
@@ -87,6 +90,21 @@ class TracerMessenger {
     status_msg.control_mode = state.system_state.control_mode;
     status_msg.error_code = state.system_state.error_code;
     status_msg.battery_voltage = state.system_state.battery_voltage;
+
+    rc_state_msg.stick_left_h =   state.rc_state.stick_left_h;
+    rc_state_msg.stick_left_v =   state.rc_state.stick_left_v;
+    rc_state_msg.stick_right_h =   state.rc_state.stick_right_h;
+    rc_state_msg.stick_right_v =   state.rc_state.stick_right_v;
+
+    rc_state_msg.swa = state.rc_state.swa;
+    rc_state_msg.swb = state.rc_state.swb;
+    rc_state_msg.swc = state.rc_state.swc;
+    rc_state_msg.swd = state.rc_state.swd;
+
+    rc_state_msg.var_a = state.rc_state.var_a;
+    
+    rc_status_pub_->publish(rc_state_msg);
+
 
     auto actuator = tracer_->GetActuatorState();
 
@@ -146,6 +164,7 @@ class TracerMessenger {
 
   rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
   rclcpp::Publisher<tracer_msgs::msg::TracerStatus>::SharedPtr status_pub_;
+  rclcpp::Publisher<tracer_msgs::msg::TracerRCState>::SharedPtr rc_status_pub_;
 
   rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr motion_cmd_sub_;
   rclcpp::Subscription<tracer_msgs::msg::TracerLightCmd>::SharedPtr
